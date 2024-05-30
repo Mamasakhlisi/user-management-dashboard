@@ -1,0 +1,23 @@
+.container {
+  padding: 15px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    .groups {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .form-group {
+      margin: 4px;
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin: 4px;
+    }
+  }
+}

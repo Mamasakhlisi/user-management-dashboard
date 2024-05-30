@@ -1,0 +1,38 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <div class="title">
+        <h4>Login</h4>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          maiores cum perspiciatis.
+        </p>
+      </div>
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="authUser()">
+        <mat-form-field appearance="outline" class="form-group">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+        @if(email.invalid && (email.dirty || email.touched)) {
+        @if(email.errors?.['required']) {
+        <small class="error-color">Field is required</small>
+        } @if(email.errors?.['email']) {
+        <small class="error-color">Email should be valid</small>
+        } }
+        <mat-form-field appearance="outline" class="form-group">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+        @if(password.invalid && (password.dirty || password.touched)) {
+        @if(password.errors?.['required']) {
+        <small class="error-color">Field is required</small>
+        } }
+        <button mat-fab extended color="primary" type="submit">Sign in</button>
+        <div class="sign_up_link">
+          <p>New to User Dashboard?</p>
+          <a routerLink="/signup">Sign up</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

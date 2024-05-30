@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="title">
+    <h4>User Details / Edit</h4>
+  </div>
+  <form
+    class="form"
+    [formGroup]="userDetailsForm"
+    (ngSubmit)="updateUserDetails()"
+  >
+    <div class="groups">
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          value="email"
+          [readonly]="true"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" value="username" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" value="password" />
+      </mat-form-field>
+    </div>
+    <div class="footer">
+      <button
+        mat-fab
+        extended
+        color="primary"
+        type="button"
+        (click)="closeDialog()"
+      >
+        Close
+      </button>
+      <button mat-fab extended color="primary" type="submit">Save</button>
+    </div>
+  </form>
+</div>
